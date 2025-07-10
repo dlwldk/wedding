@@ -154,23 +154,8 @@
         <!-- 지도 -->
         <div class="map-section">
             <div class="map-container">
-                <!-- 방법 1: 네이버 지도 API (API 키 필요) -->
+                <!-- 네이버 지도 API -->
                 <div id="map" style="width:100%;height:300px;"></div>
-                
-                <!-- 방법 2: 정적 지도 이미지 (API 키 불필요) -->
-                <!-- 
-                <div class="static-map">
-                    <img src="https://map.naver.com/v5/api/simpleimage?center=126.8354,37.5589&level=15&w=400&h=300&baselayer=default&markers=126.8354,37.5589" 
-                         alt="더 베뉴지 서울 위치" 
-                         style="width:100%;height:300px;object-fit:cover;border-radius:8px;">
-                    <div class="map-overlay">
-                        <div class="venue-info">
-                            <h3>더 베뉴지 서울</h3>
-                            <p>서울특별시 강서구 강서로 388</p>
-                        </div>
-                    </div>
-                </div>
-                -->
             </div>
         </div>
 
@@ -248,9 +233,8 @@
             });
         });
     </script>
-
     <!-- 네이버 지도 API -->
-    <!-- 보안: 실제 배포 시에는 환경변수나 서버사이드에서 API 키를 주입해야 합니다 -->
+    <!-- GitHub Actions에서 YOUR_CLIENT_ID_HERE를 실제 API 키로 자동 치환 -->
     <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=YOUR_CLIENT_ID_HERE"></script>
     <script>
         // 네이버 지도 초기화
