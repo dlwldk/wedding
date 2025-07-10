@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>형조 & 지영의 결혼식</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Cormorant Garamond 폰트 -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- 한글 모바일 청첩장용 폰트들 -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;500;600&family=Gowun+Dodum&display=swap" rel="stylesheet">
+    <!-- 아리따 부리 폰트 -->
+    <link href="https://fonts.googleapis.com/css2?family=Arita+Buri:wght@300;400;700&display=swap" rel="stylesheet">
+    <!-- 한글 폰트 -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- Pretendard 폰트 -->
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- 배경음악 -->
+    <audio id="background-music" loop preload="auto">
+        <source src="wedding-song.mp3" type="audio/mpeg">
+    </audio>
+    
+    <!-- 음악 컨트롤 버튼 -->
+    <button id="music-toggle" class="music-btn" title="음악 재생/정지">🎵</button>
+
+    <div class="container">
+        <!-- 첫 번째 페이지 - INVITATION -->
+        <div class="invitation-cover">
+            <div class="invitation-title">INVITATION</div>
+            
+            <div class="main-photo">
+                <img src="tmp_main.jpg" alt="형조 & 지영의 웨딩 사진" class="wedding-main-photo">
+            </div>
+            
+            <div class="couple-info">
+                <div class="couple-names">
+                    <div class="groom-name">양형조</div>
+                    <div class="bride-name">유지영</div>
+                </div>
+                <div class="wedding-dates">
+                    <div class="wedding-date date-arita">10.19</div>
+                </div>
+            </div>
+            
+            <div class="wedding-details">
+                <div class="wedding-time">일요일 낮 1시 20분</div>
+                <div class="wedding-venue">더 베뉴지 서울</div>
+            </div>
+            
+            <div class="invitation-message">
+                <div class="message-line1">PLEASE COME TO OUR WEDDING</div>
+                <div class="message-line2">AND BLESS THE START OF OUR NEW LIFE TOGETHER</div>
+            </div>
+        </div>
+
+        <!-- 인사말 -->
+        <div class="greeting">
+            <p>
+                곁에 있을 때 가장 나다운 모습이<br>
+                되게 하는 사람.<br><br>
+                
+                꿈을 펼칠 수 있도록<br>
+                서로에게 날개가 되어 줄 사람.<br><br>
+                
+                그 사람과 삶의 여행을 함께 떠나려고 합니다.<br><br>
+                
+                저희 여행의 출발점에 여러분을 초대하오니<br>
+                귀한 걸음 하시어 축복해 주시면 감사하겠습니다.
+            </p>
+        </div>
+
+        <!-- 가족 소개 -->
+        <div class="family-info">
+            <div class="family-line">
+                <span class="parents">故양봉식 · 김인숙</span>
+                <span class="relation">의 아들</span>
+                <span class="name">형조</span>
+            </div>
+            <div class="family-line">
+                <span class="parents">유준호 · 최옥순</span>
+                <span class="relation">의 딸</span>
+                <span class="name">지영</span>
+            </div>
+        </div>
+
+        <!-- 갤러리 -->
+        <div class="gallery-section">
+            <div class="gallery-title">Gallery</div>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <div class="photo-placeholder-small">📷</div>
+                </div>
+                <div class="gallery-item">
+                    <div class="photo-placeholder-small">📷</div>
+                </div>
+                <div class="gallery-item">
+                    <div class="photo-placeholder-small">📷</div>
+                </div>
+                <div class="gallery-item">
+                    <div class="photo-placeholder-small">📷</div>
+                </div>
+                <div class="gallery-item">
+                    <div class="photo-placeholder-small">📷</div>
+                </div>
+                <div class="gallery-item">
+                    <div class="photo-placeholder-small">📷</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 장소 정보 -->
+        <div class="venue-section">
+            <div class="venue-title">Wedding Information</div>
+            <div class="venue-details">
+                <div class="venue-name">더 베뉴지 서울</div>
+                <div class="venue-address">서울 강서구 강서로 388 (등촌동 678-14)</div>
+                <div class="venue-tel">Tel. 02-1234-5678</div>
+            </div>
+        </div>
+
+        <!-- 교통 정보 -->
+        <div class="transport-section">
+            <div class="transport-title">오시는 길</div>
+            
+            <div class="transport-item">
+                <div class="transport-type">지하철</div>
+                <div class="transport-desc">5호선 발산역 3번출구 도보 10분 거리</div>
+            </div>
+            
+            <div class="transport-item">
+                <div class="transport-type">버스</div>
+                <div class="transport-desc">
+                    간선버스 : 47, 240, 463<br>
+                    지선버스 : 4211<br>
+                    광역버스 : 강서08
+                </div>
+            </div>
+            
+            <div class="transport-item">
+                <div class="transport-type">자가용</div>
+                <div class="transport-desc">베뉴지 앞쪽 건물 150m 지점 공영주차장 이용</div>
+            </div>
+            
+            <div class="transport-item">
+                <div class="transport-type">김포공항</div>
+                <div class="transport-desc">공항버스 이용 11분 / 지하철5호선 김포공항 1정거장 후 하차</div>
+            </div>
+        </div>
+
+        <!-- 지도 -->
+        <div class="map-section">
+            <div class="map-container">
+                <!-- 방법 1: 네이버 지도 API (API 키 필요) -->
+                <div id="map" style="width:100%;height:300px;"></div>
+                
+                <!-- 방법 2: 정적 지도 이미지 (API 키 불필요) -->
+                <!-- 
+                <div class="static-map">
+                    <img src="https://map.naver.com/v5/api/simpleimage?center=126.8354,37.5589&level=15&w=400&h=300&baselayer=default&markers=126.8354,37.5589" 
+                         alt="더 베뉴지 서울 위치" 
+                         style="width:100%;height:300px;object-fit:cover;border-radius:8px;">
+                    <div class="map-overlay">
+                        <div class="venue-info">
+                            <h3>더 베뉴지 서울</h3>
+                            <p>서울특별시 강서구 강서로 388</p>
+                        </div>
+                    </div>
+                </div>
+                -->
+            </div>
+        </div>
+
+        <!-- 마무리 -->
+        <div class="closing">
+            <div class="closing-text">
+                소중한 분들과 함께하는<br>
+                저희의 새로운 시작을<br>
+                따뜻한 마음으로 지켜봐 주세요.
+            </div>
+            <div class="final-couple">형조 ♥ 지영</div>
+        </div>
+    </div>
+
+    <!-- 음악 컨트롤 JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const audio = document.getElementById('background-music');
+            const toggleBtn = document.getElementById('music-toggle');
+            let isPlaying = false;
+
+            // 음악 볼륨 설정 (0.3 = 30%)
+            audio.volume = 0.3;
+
+            // 페이지 로드 시 바로 음악 재생 시도
+            audio.play().then(() => {
+                toggleBtn.textContent = '🔇';
+                toggleBtn.title = '음악 정지';
+                isPlaying = true;
+                console.log('음악 자동 재생 성공!');
+            }).catch((error) => {
+                console.log('자동 재생 차단됨 - 사용자 상호작용 필요:', error);
+                // 자동재생 실패 시 첫 클릭/터치에서 재생
+                const startMusicOnInteraction = function() {
+                    audio.play().then(() => {
+                        toggleBtn.textContent = '🔇';
+                        toggleBtn.title = '음악 정지';
+                        isPlaying = true;
+                    });
+                    // 이벤트 리스너 제거
+                    document.removeEventListener('click', startMusicOnInteraction);
+                    document.removeEventListener('touchstart', startMusicOnInteraction);
+                    document.removeEventListener('scroll', startMusicOnInteraction);
+                };
+                
+                // 다양한 사용자 상호작용 이벤트에 리스너 추가
+                document.addEventListener('click', startMusicOnInteraction, { once: true });
+                document.addEventListener('touchstart', startMusicOnInteraction, { once: true });
+                document.addEventListener('scroll', startMusicOnInteraction, { once: true });
+            });
+
+            // 음악 토글 버튼 이벤트
+            toggleBtn.addEventListener('click', function() {
+                if (isPlaying) {
+                    audio.pause();
+                    toggleBtn.textContent = '🎵';
+                    toggleBtn.title = '음악 재생';
+                    isPlaying = false;
+                } else {
+                    audio.play().then(() => {
+                        toggleBtn.textContent = '🔇';
+                        toggleBtn.title = '음악 정지';
+                        isPlaying = true;
+                    }).catch((error) => {
+                        console.log('음악 재생 실패:', error);
+                    });
+                }
+            });
+
+            // 음악이 끝나면 버튼 상태 리셋 (loop이 있어서 실제로는 안 일어남)
+            audio.addEventListener('ended', function() {
+                toggleBtn.textContent = '🎵';
+                toggleBtn.title = '음악 재생';
+                isPlaying = false;
+            });
+        });
+    </script>
+
+    <!-- 네이버 지도 API -->
+    <!-- 보안: 실제 배포 시에는 환경변수나 서버사이드에서 API 키를 주입해야 합니다 -->
+    <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=YOUR_CLIENT_ID_HERE"></script>
+    <script>
+        // 네이버 지도 초기화
+        function initMap() {
+            try {
+                // 더 베뉴지 서울 좌표 (서울특별시 강서구 강서로 388)
+                const venueLocation = { lat: 37.5589, lng: 126.8354 };
+                
+                const map = new naver.maps.Map('map', {
+                    center: venueLocation,
+                    zoom: 15,
+                    mapTypeControl: false,
+                    scaleControl: false,
+                    logoControl: false,
+                    mapDataControl: false,
+                    zoomControl: true,
+                    zoomControlOptions: {
+                        position: naver.maps.Position.TOP_RIGHT
+                    }
+                });
+
+                // 마커 추가
+                const marker = new naver.maps.Marker({
+                    position: venueLocation,
+                    map: map,
+                    title: '더 베뉴지 서울'
+                });
+
+                // 정보창 추가
+                const infoWindow = new naver.maps.InfoWindow({
+                    content: `
+                        <div style="padding: 10px; min-width: 200px;">
+                            <h3 style="margin: 0 0 5px 0; font-size: 14px; color: #333;">더 베뉴지 서울</h3>
+                            <p style="margin: 0; font-size: 12px; color: #666;">서울특별시 강서구 강서로 388</p>
+                        </div>
+                    `
+                });
+
+                // 마커 클릭 시 정보창 표시
+                naver.maps.Event.addListener(marker, 'click', function() {
+                    if (infoWindow.getMap()) {
+                        infoWindow.close();
+                    } else {
+                        infoWindow.open(map, marker);
+                    }
+                });
+            } catch (error) {
+                console.error('지도 초기화 오류:', error);
+                // 오류 발생 시 대체 텍스트 표시
+                document.getElementById('map').innerHTML = `
+                    <div style="display: flex; align-items: center; justify-content: center; height: 100%; background-color: #f8f8f8; color: #666; font-size: 14px;">
+                        <div style="text-align: center;">
+                            <div style="font-size: 24px; margin-bottom: 10px;">🗺️</div>
+                            <div>더 베뉴지 서울</div>
+                            <div style="font-size: 12px; margin-top: 5px;">서울특별시 강서구 강서로 388</div>
+                        </div>
+                    </div>
+                `;
+            }
+        }
+
+        // 페이지 로드 후 지도 초기화
+        document.addEventListener('DOMContentLoaded', function() {
+            // 지도 섹션이 화면에 보일 때 지도 초기화
+            const mapSection = document.querySelector('.map-section');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        initMap();
+                        observer.unobserve(entry.target);
+                    }
+                });
+            });
+            
+            if (mapSection) {
+                observer.observe(mapSection);
+            }
+        });
+    </script>
+</body>
+</html>
