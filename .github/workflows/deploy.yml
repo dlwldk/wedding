@@ -27,22 +27,10 @@ jobs:
       with:
         node-version: '18'
         
-    - name: Generate Static Map with API Key
+    - name: Replace API Key
       run: |
-        # 네이버 클라우드 Maps API로 정적 지도 이미지 생성
-        CLIENT_ID="${{ secrets.NAVER_MAPS_CLIENT_ID }}"
-        CLIENT_SECRET="${{ secrets.NAVER_MAPS_CLIENT_SECRET }}"
-        
-        # 정적 지도 이미지 API 호출
-        curl -X GET "https://maps.apigw.ntruss.com/map-static/v2/staticmap?center=126.8354,37.5589&level=15&w=400&h=300&scale=1&markers=126.8354,37.5589" \
-          -H "x-ncp-apigw-api-key-id: ${CLIENT_ID}" \
-          -H "x-ncp-apigw-api-key: ${CLIENT_SECRET}" \
-          --output static-map.jpg
-        
-        # 생성된 이미지를 웹사이트에 포함
-        # Base64로 인코딩하여 HTML에 직접 삽입
-        BASE64_IMAGE=$(base64 -w 0 static-map.jpg)
-        sed -i "s|https://maps.apigw.ntruss.com/map-static/v2/staticmap?center=126.8354,37.5589&level=15&w=400&h=300&scale=1&markers=126.8354,37.5589|data:image/jpeg;base64,${BASE64_IMAGE}|g" index.html
+        # API 키를 환경변수에서 가져와서 HTML 파일의 플레이스홀더를 교체
+        sed -i "s/CLIENT_ID/${{ secrets.NAVER_MAPS_CLIENT_ID }}/g" index.html
         
     - name: Setup Pages
       uses: actions/configure-pages@v4
