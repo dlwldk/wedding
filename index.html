@@ -280,6 +280,9 @@
                         infoWindow.open(map, marker);
                     }
                 });
+
+                // 페이지 로드 시 정보창 자동으로 열기
+                infoWindow.open(map, marker);
             } catch (error) {
                 console.error('지도 초기화 오류:', error);
                 // 오류 발생 시 대체 텍스트 표시
