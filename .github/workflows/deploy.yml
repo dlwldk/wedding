@@ -21,10 +21,10 @@ jobs:
     - name: Replace API Key
       run: |
         # API 키를 환경변수에서 가져와서 HTML 파일의 플레이스홀더를 교체
-        sed -i "s/YOUR_CLIENT_ID_HERE/${{ secrets.NAVER_MAPS_CLIENT_ID }}/g" index.html
+        sed -i "s/CLIENT_ID/${{ secrets.NAVER_MAPS_CLIENT_ID }}/g" index.html
         
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: .
+        publish_dir: . 
