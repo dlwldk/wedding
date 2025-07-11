@@ -17,6 +17,9 @@ concurrency:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     
     steps:
     - name: Checkout
@@ -30,7 +33,7 @@ jobs:
     - name: Replace API Key
       run: |
         # API 키를 환경변수에서 가져와서 HTML 파일의 플레이스홀더를 교체
-        sed -i "s/CLIENT_ID/${{ secrets.NAVER_MAPS_CLIENT_ID }}/g" index.html
+        sed -i "s/NAVER_MAPS_CLIENT_ID/${{ secrets.NAVER_MAPS_CLIENT_ID }}/g" index.html
         
     - name: Setup Pages
       uses: actions/configure-pages@v4
