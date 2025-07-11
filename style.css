@@ -6,7 +6,7 @@
 
 body {
     font-family: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
-    background-color: #f5f5f5;
+    background-color: #faf7f2;
     color: #333;
     line-height: 1.6;
     font-weight: 300;
@@ -16,7 +16,7 @@ body {
     max-width: 390px;
     margin: 0 auto;
     background-color: #ffffff;
-    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    box-shadow: 0 0 20px rgba(0,0,0,0.08);
     overflow: hidden;
 }
 
@@ -34,7 +34,7 @@ body {
 .invitation-title {
     font-size: 18px;
     font-weight: 600;
-    color: #666;
+    color: #8b7355;
     letter-spacing: 18px;
     margin-bottom: 40px;
     text-transform: uppercase;
@@ -51,7 +51,7 @@ body {
     transform: translateX(-50%);
     width: 120px;
     height: 1px;
-    background-color: #ccc;
+    background-color: #d4c4a8;
 }
 
 .main-photo {
@@ -119,7 +119,7 @@ body {
 
 .wedding-date {
     font-size: 36px;
-    color: #666;
+    color: #8b7355;
     font-weight: 300;
 }
 
@@ -174,13 +174,13 @@ body {
 .greeting {
     padding: 60px 30px;
     text-align: center;
-    background-color: #ffffff;
+    background-color: #fefcf8;
     line-height: 1.8;
 }
 
 .greeting p {
     font-size: 15px;
-    color: #666;
+    color: #6b5b47;
     font-weight: 300;
     line-height: 1.9;
     letter-spacing: 0.3px;
@@ -190,7 +190,7 @@ body {
 /* 가족 소개 */
 .family-info {
     padding: 40px 30px;
-    background-color: #fafafa;
+    background-color: #f8f4ed;
     text-align: center;
 }
 
@@ -224,13 +224,13 @@ body {
 /* 갤러리 */
 .gallery-section {
     padding: 60px 30px;
-    background-color: #ffffff;
+    background-color: #fefcf8;
 }
 
 .gallery-title {
     text-align: center;
     font-size: 18px;
-    color: #666;
+    color: #8b7355;
     margin-bottom: 40px;
     font-weight: 300;
     letter-spacing: 1px;
@@ -245,6 +245,20 @@ body {
 .gallery-item {
     aspect-ratio: 1;
     overflow: hidden;
+    border-radius: 6px;
+}
+
+.gallery-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 6px;
+    transition: transform 0.3s ease;
+    display: block;
+}
+
+.gallery-photo:hover {
+    transform: scale(1.05);
 }
 
 .photo-placeholder-small {
@@ -263,28 +277,28 @@ body {
 /* 장소 정보 */
 .venue-section {
     padding: 60px 30px;
-    background-color: #fafafa;
+    background-color: #f8f4ed;
     text-align: center;
 }
 
 .venue-title {
     font-size: 18px;
-    color: #666;
+    color: #8b7355;
     margin-bottom: 40px;
     font-weight: 300;
     letter-spacing: 1px;
 }
 
 .venue-details {
-    background-color: #ffffff;
+    background-color: #fefcf8;
     padding: 30px;
     border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    box-shadow: 0 2px 10px rgba(139, 115, 85, 0.08);
 }
 
 .venue-name {
     font-size: 18px;
-    color: #333;
+    color: #6b5b47;
     margin-bottom: 12px;
     font-weight: 400;
     letter-spacing: 0.5px;
@@ -292,7 +306,7 @@ body {
 
 .venue-address {
     font-size: 14px;
-    color: #888;
+    color: #8b7355;
     margin-bottom: 8px;
     font-weight: 300;
     line-height: 1.5;
@@ -300,20 +314,20 @@ body {
 
 .venue-tel {
     font-size: 14px;
-    color: #888;
+    color: #8b7355;
     font-weight: 300;
 }
 
 /* 교통 정보 */
 .transport-section {
     padding: 60px 30px;
-    background-color: #ffffff;
+    background-color: #fefcf8;
 }
 
 .transport-title {
     text-align: center;
     font-size: 18px;
-    color: #666;
+    color: #8b7355;
     margin-bottom: 40px;
     font-weight: 300;
     letter-spacing: 1px;
@@ -322,7 +336,7 @@ body {
 .transport-item {
     margin-bottom: 25px;
     padding: 25px;
-    background-color: #fafafa;
+    background-color: #f8f4ed;
     border-radius: 8px;
 }
 
@@ -332,29 +346,116 @@ body {
 
 .transport-type {
     font-size: 15px;
-    color: #333;
+    color: #6b5b47;
     margin-bottom: 10px;
     font-weight: 400;
 }
 
 .transport-desc {
+    font-size: 13px;
+    color: #8b7355;
+    font-weight: 300;
+    line-height: 1.5;
+}
+
+/* 계좌번호 섹션 */
+.account-section {
+    padding: 40px 30px;
+    background-color: #fefcf8;
+    text-align: center;
+}
+
+.account-title {
+    text-align: center;
+    font-size: 18px;
+    color: #8b7355;
+    margin-bottom: 40px;
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+.account-container {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.account-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 25px;
+    border: 1px solid #e8dfd0;
+    border-radius: 8px;
+    background-color: #f8f4ed;
+}
+
+.account-row {
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+    gap: 20px;
+}
+
+.account-side {
     font-size: 14px;
-    color: #666;
-    line-height: 1.6;
+    color: #888;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    min-width: 60px;
+    padding-top: 2px;
+}
+
+.account-info {
+    flex: 1;
+    text-align: left;
+}
+
+.account-divider {
+    width: 100%;
+    height: 1px;
+    background-color: #e8dfd0;
+    margin: 20px 0;
+}
+
+.account-details {
+    width: 100%;
+}
+
+.bank-name {
+    font-size: 12px;
+    color: #6b5b47;
+    font-weight: 300;
+    margin-bottom: 8px;
+}
+
+.account-number {
+    font-size: 15px;
+    color: #8b7355;
+    font-weight: 400;
+    margin-bottom: 5px;
+    font-family: 'Courier New', monospace;
+    letter-spacing: 1px;
+}
+
+.account-holder {
+    font-size: 14px;
+    color: #8b7355;
     font-weight: 300;
 }
 
 /* 지도 */
 .map-section {
     padding: 60px 30px;
-    background-color: #fafafa;
+    background-color: #f8f4ed;
 }
 
 .map-container {
-    background-color: #ffffff;
+    background-color: #fefcf8;
     border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    box-shadow: 0 2px 10px rgba(139, 115, 85, 0.08);
 }
 
 #map {
@@ -378,12 +479,12 @@ body {
 .closing {
     padding: 60px 30px;
     text-align: center;
-    background-color: #ffffff;
+    background-color: #fefcf8;
 }
 
 .closing-text {
     font-size: 15px;
-    color: #666;
+    color: #6b5b47;
     line-height: 1.9;
     font-weight: 300;
     margin-bottom: 30px;
@@ -393,7 +494,7 @@ body {
 
 .final-couple {
     font-size: 18px;
-    color: #333;
+    color: #8b7355;
     font-weight: 400;
     letter-spacing: 1px;
     font-family: 'Gowun Dodum', sans-serif;
@@ -530,5 +631,6 @@ html {
 .gallery-section { animation-delay: 0.4s; }
 .venue-section { animation-delay: 0.5s; }
 .transport-section { animation-delay: 0.6s; }
-.map-section { animation-delay: 0.7s; }
-.closing { animation-delay: 0.8s; }
+.account-section { animation-delay: 0.7s; }
+.map-section { animation-delay: 0.8s; }
+.closing { animation-delay: 0.9s; }
