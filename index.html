@@ -225,7 +225,7 @@
                     <span class="map-icon">🗺️</span>
                     <span class="map-text">네이버 지도</span>
                 </a>
-                <a href="https://kko.kakao.com/Kns-lSDBsO" target="_blank" class="map-link-btn kakao-map">
+                <a href="https://kko.kakao.com/AE3_xjgBeK" target="_blank" class="map-link-btn kakao-map">
                     <span class="map-icon">📍</span>
                     <span class="map-text">카카오맵</span>
                 </a>
@@ -354,16 +354,15 @@
                 return leaf;
             }
 
-            // 초기 낙엽 설정 (화면 전체에 분산 배치)
+            // 초기 꽃잎 설정
             function initializeLeaves() {
-                // 초기에 8개의 낙엽을 다양한 시작 시점으로 분산
                 for (let i = 0; i < 8; i++) {
                     const leaf = createLeaf(i * -2.5); // 음수로 시작해서 이미 떨어지고 있는 것처럼
                     mainPetals.appendChild(leaf);
                 }
             }
 
-            // 지속적으로 낙엽 추가
+            // 지속적으로 추가
             function continuousLeafGeneration() {
                 // 처음에 바로 몇 개 더 추가
                 setTimeout(() => {
@@ -378,18 +377,18 @@
                     const leaf = createLeaf(0);
                     mainPetals.appendChild(leaf);
                     
-                    // 낙엽이 너무 많아지지 않도록 제한
+                    // 너무 많아지지 않도록 제한
                     if (mainPetals.children.length > 20) {
                         mainPetals.removeChild(mainPetals.firstChild);
                     }
                 }, 3000);
             }
 
-            // 페이지 로드 시 즉시 낙엽 시작 (초기화면부터)
+            // 페이지 로드 시 즉시 꽃잎 시작
             initializeLeaves();
             continuousLeafGeneration();
 
-            // 캘리그래피 애니메이션 시작 (낙엽은 이미 떨어지고 있음)
+            // 캘리그래피 애니메이션 시작
             setTimeout(() => {
                 calligraphyOverlay.classList.add('show');
                 
