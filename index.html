@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <!-- Cormorant Garamond 폰트 -->
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <!-- 한글 모바일 청첩장용 폰트들 -->
+    <!-- 한글 폰트들 -->
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;500;600&family=Gowun+Dodum&display=swap" rel="stylesheet">
     <!-- 아리따 부리 폰트 -->
     <link href="https://fonts.googleapis.com/css2?family=Arita+Buri:wght@300;400;700&display=swap" rel="stylesheet">
@@ -27,7 +27,7 @@
     <!-- 음악 컨트롤 버튼 -->
     <button id="music-toggle" class="music-btn" title="음악 재생/정지">🎵</button>
 
-    <!-- 떨어지는 꽃잎들 (하나의 컨테이너만 사용) -->
+    <!-- 떨어지는 꽃잎들 -->
     <div class="flower-petals" id="main-petals">
     </div>
 
@@ -231,7 +231,7 @@
                 </a>
             </div>
             
-            <!-- 10월 달력 -->
+            <!-- 달력 -->
             <div class="calendar-section">
                 <div class="calendar-title">10월</div>
                 <div class="calendar">
@@ -327,19 +327,19 @@
                 }
             });
 
-            // 음악이 끝나면 버튼 상태 리셋 (loop이 있어서 실제로는 안 일어남)
+            // 음악이 끝나면 버튼 상태 리셋
             audio.addEventListener('ended', function() {
                 toggleBtn.textContent = '🎵';
                 toggleBtn.title = '음악 재생';
                 isPlaying = false;
             });
 
-            // 낙엽 애니메이션 시스템 (단일 시스템)
+            // 애니메이션 시스템
             const mainPetals = document.getElementById('main-petals');
             const calligraphyOverlay = document.getElementById('calligraphy-overlay');
             const calligraphyText = document.getElementById('calligraphy-text');
 
-            // 낙엽 생성 함수
+            // 꽃잎 생성 함수
             function createLeaf(delay = 0) {
                 const leaf = document.createElement('div');
                 const leafType = Math.floor(Math.random() * 8) + 1;
@@ -443,7 +443,7 @@
         // 네이버 지도 초기화
         function initMap() {
             try {
-                // 더 베뉴지 서울 좌표 (서울특별시 강서구 강서로 388)
+                // 결혼식장 좌표
                 var mapOptions = {
                     center: new naver.maps.LatLng(37.5589, 126.8354),
                     zoom: 15,
