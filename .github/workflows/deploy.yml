@@ -1,5 +1,4 @@
 name: Deploy to GitHub Pages
-
 on:
   push:
     branches: [ main ]
@@ -30,10 +29,26 @@ jobs:
       with:
         node-version: '18'
         
-    - name: Replace API Key
+    - name: Debug and Replace API Key
+      env:
+        API_KEY: ${{ secrets.NAVER_MAPS_CLIENT_ID }}
       run: |
-        # API 키를 가져와서 HTML 파일의 플레이스홀더를 교체
-        sed -i "s/NAVER_MAPS_CLIENT_ID/${{ secrets.NAVER_MAPS_CLIENT_ID }}/g" index.html
+        echo "Checking if API key exists..."
+        if [ -z "$API_KEY" ]; then
+          echo "❌ API_KEY is empty or not set!"
+          exit 1
+        else
+          echo "✅ API key found (length: ${#API_KEY})"
+        fi
+        
+        echo "Before replacement:"
+        grep -n "NAVER_MAPS_CLIENT_ID" index.html || echo "No placeholder found"
+        
+        # API 키 교체
+        sed -i "s/NAVER_MAPS_CLIENT_ID/$API_KEY/g" index.html
+        
+        echo "After replacement:"
+        grep -n "NAVER_MAPS_CLIENT_ID" index.html || echo "✅ All placeholders replaced"
         
     - name: Setup Pages
       uses: actions/configure-pages@v4
