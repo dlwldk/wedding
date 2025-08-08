@@ -27,6 +27,17 @@
     <!-- 음악 컨트롤 버튼 -->
     <button id="music-toggle" class="music-btn" title="음악 재생/정지">🎵</button>
 
+    <!-- 떨어지는 꽃잎들 (하나의 컨테이너만 사용) -->
+    <div class="flower-petals" id="main-petals">
+    </div>
+
+    <!-- 캘리그래피 애니메이션 오버레이 -->
+    <div id="calligraphy-overlay" class="calligraphy-overlay">
+        <div class="calligraphy-container">
+            <div class="calligraphy-text" id="calligraphy-text"></div>
+        </div>
+    </div>
+
     <div class="container">
         <!-- 첫 번째 페이지 - INVITATION -->
         <div class="invitation-cover">
@@ -48,7 +59,7 @@
             
             <div class="wedding-details">
                 <div class="wedding-time">일요일 낮 1시 20분</div>
-                <div class="wedding-venue">더 베뉴지 서울</div>
+                <div class="wedding-venue">더 베뉴지지 서울 2층 베뉴지홀</div>
             </div>
             
             <div class="invitation-message">
@@ -118,7 +129,7 @@
             <div class="venue-details">
                 <div class="venue-name">더 베뉴지 서울</div>
                 <div class="venue-address">서울 강서구 강서로 388 (등촌동 678-14)</div>
-                <div class="venue-tel">Tel. 0507-1392-2102</div>
+                <div class="venue-tel">Tel. 02-2657-2100</div>
             </div>
         </div>
 
@@ -127,22 +138,41 @@
             <div class="transport-title">오시는 길</div>
             
             <div class="transport-item">
-                <div class="transport-type">지하철</div>
-                <div class="transport-desc">5호선 발산역 3번출구 도보 10분 거리</div>
-            </div>
-            
-            <div class="transport-item">
-                <div class="transport-type">버스</div>
+                <div class="transport-type">🚇 지하철</div>
                 <div class="transport-desc">
-                    간선버스 : 47, 240, 463<br>
-                    지선버스 : 4211<br>
-                    광역버스 : 강서08
+                    - 5호선 발산역 3번 출구 방향 도보 4분 이내<br>
+                    - 9호선 양천향교역 6번 출구 도보 10분 직진
                 </div>
             </div>
             
             <div class="transport-item">
-                <div class="transport-type">자가용</div>
-                <div class="transport-desc">베뉴지 앞쪽 건물 150m 지점 공영주차장 이용</div>
+                <div class="transport-type">🚌 버스</div>
+                <div class="transport-desc bus-info">
+                    - 발산역 정류장 하차<br>
+                    - 간선버스 : 601 / 605 / 652 / 654 / 661<br>
+                    - 지선버스 : 6630 / 6632 / 6642 / 6645 / 6648 / 6657 / 6712<br>
+                    - 공항버스 : 6003<br>
+                    - 일반버스 : 60 / 60-3 / 88 / 1002<br>
+                    - 직행버스 : 3000 / 8000
+                </div>
+            </div>
+            
+            <div class="transport-item">
+                <div class="transport-type">🚗 자차</div>
+                <div class="transport-desc">
+                    - 내비게이션 : '더베뉴지 서울' 검색<br>
+                    - 서울시 강서구 강서로 388 더베뉴지 서울<br>
+                    베뉴지 앞쪽 건물 150m 지점 공영주차장 이용
+                </div>
+            </div>
+            
+            <div class="transport-item">
+                <div class="transport-type">🅿️ 주차</div>
+                <div class="transport-desc">
+                    - 건물 내 지하 2층 ~ 지하 5층 / 지상 4층 ~ 6층<br>
+                    - 1층 엘레베이터 옆 문 무인 정산기에 차량번호 입력 > 2시간 무료 주차 적용<br>
+                    (초과 시 10분당 1,000원)
+                </div>
             </div>
             
         </div>
@@ -155,7 +185,10 @@
                 <div class="account-item">
                     <div class="account-details">
                         <div class="account-row">
-                            <div class="account-side">신랑측</div>
+                            <div class="account-side">
+                                신랑측
+                                <a href="tel:01049341590" class="call-btn" title="신랑측 통화">📞</a>
+                            </div>
                             <div class="account-info">
                                 <div class="bank-name">케이뱅크</div>
                                 <div class="account-number">100-138-072465</div>
@@ -164,7 +197,10 @@
                         </div>
                         <div class="account-divider"></div>
                         <div class="account-row">
-                            <div class="account-side">신부측</div>
+                            <div class="account-side">
+                                신부측
+                                <a href="tel:01092982749" class="call-btn" title="신부측 통화">📞</a>
+                            </div>
                             <div class="account-info">
                                 <div class="bank-name">케이뱅크</div>
                                 <div class="account-number">100-161-612717</div>
@@ -181,6 +217,69 @@
             <div class="map-container">
                 <!-- 네이버 지도 JavaScript API -->
                 <div id="map" style="width:100%;height:300px;"></div>
+            </div>
+            
+            <!-- 지도 링크 버튼들 -->
+            <div class="map-links">
+                <a href="https://naver.me/x5GojlWc" target="_blank" class="map-link-btn naver-map">
+                    <span class="map-icon">🗺️</span>
+                    <span class="map-text">네이버 지도</span>
+                </a>
+                <a href="https://kko.kakao.com/Kns-lSDBsO" target="_blank" class="map-link-btn kakao-map">
+                    <span class="map-icon">📍</span>
+                    <span class="map-text">카카오맵</span>
+                </a>
+            </div>
+            
+            <!-- 10월 달력 -->
+            <div class="calendar-section">
+                <div class="calendar-title">10월</div>
+                <div class="calendar">
+                    <div class="calendar-header">
+                        <div class="weekday">일</div>
+                        <div class="weekday">월</div>
+                        <div class="weekday">화</div>
+                        <div class="weekday">수</div>
+                        <div class="weekday">목</div>
+                        <div class="weekday">금</div>
+                        <div class="weekday">토</div>
+                    </div>
+                    <div class="calendar-body">
+                        <div class="calendar-day empty"></div>
+                        <div class="calendar-day empty"></div>
+                        <div class="calendar-day">1</div>
+                        <div class="calendar-day">2</div>
+                        <div class="calendar-day">3</div>
+                        <div class="calendar-day">4</div>
+                        <div class="calendar-day">5</div>
+                        <div class="calendar-day">6</div>
+                        <div class="calendar-day">7</div>
+                        <div class="calendar-day">8</div>
+                        <div class="calendar-day">9</div>
+                        <div class="calendar-day">10</div>
+                        <div class="calendar-day">11</div>
+                        <div class="calendar-day">12</div>
+                        <div class="calendar-day">13</div>
+                        <div class="calendar-day">14</div>
+                        <div class="calendar-day">15</div>
+                        <div class="calendar-day">16</div>
+                        <div class="calendar-day">17</div>
+                        <div class="calendar-day">18</div>
+                        <div class="calendar-day wedding-day">19</div>
+                        <div class="calendar-day">20</div>
+                        <div class="calendar-day">21</div>
+                        <div class="calendar-day">22</div>
+                        <div class="calendar-day">23</div>
+                        <div class="calendar-day">24</div>
+                        <div class="calendar-day">25</div>
+                        <div class="calendar-day">26</div>
+                        <div class="calendar-day">27</div>
+                        <div class="calendar-day">28</div>
+                        <div class="calendar-day">29</div>
+                        <div class="calendar-day">30</div>
+                        <div class="calendar-day">31</div>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -205,32 +304,10 @@
             // 음악 볼륨 설정 (0.3 = 30%)
             audio.volume = 0.3;
 
-            // 페이지 로드 시 바로 음악 재생 시도
-            audio.play().then(() => {
-                toggleBtn.textContent = '🔇';
-                toggleBtn.title = '음악 정지';
-                isPlaying = true;
-                console.log('음악 자동 재생 성공!');
-            }).catch((error) => {
-                console.log('자동 재생 차단됨 - 사용자 상호작용 필요:', error);
-                // 자동재생 실패 시 첫 클릭/터치에서 재생
-                const startMusicOnInteraction = function() {
-                    audio.play().then(() => {
-                        toggleBtn.textContent = '🔇';
-                        toggleBtn.title = '음악 정지';
-                        isPlaying = true;
-                    });
-                    // 이벤트 리스너 제거
-                    document.removeEventListener('click', startMusicOnInteraction);
-                    document.removeEventListener('touchstart', startMusicOnInteraction);
-                    document.removeEventListener('scroll', startMusicOnInteraction);
-                };
-                
-                // 다양한 사용자 상호작용 이벤트에 리스너 추가
-                document.addEventListener('click', startMusicOnInteraction, { once: true });
-                document.addEventListener('touchstart', startMusicOnInteraction, { once: true });
-                document.addEventListener('scroll', startMusicOnInteraction, { once: true });
-            });
+            // 페이지 로드 시 음소거 상태로 시작
+            toggleBtn.textContent = '🎵';
+            toggleBtn.title = '음악 재생';
+            isPlaying = false;
 
             // 음악 토글 버튼 이벤트
             toggleBtn.addEventListener('click', function() {
@@ -256,10 +333,113 @@
                 toggleBtn.title = '음악 재생';
                 isPlaying = false;
             });
+
+            // 낙엽 애니메이션 시스템 (단일 시스템)
+            const mainPetals = document.getElementById('main-petals');
+            const calligraphyOverlay = document.getElementById('calligraphy-overlay');
+            const calligraphyText = document.getElementById('calligraphy-text');
+
+            // 낙엽 생성 함수
+            function createLeaf(delay = 0) {
+                const leaf = document.createElement('div');
+                const leafType = Math.floor(Math.random() * 8) + 1;
+                
+                leaf.className = `petal leaf${leafType}`;
+                leaf.style.left = Math.random() * 100 + '%';
+                leaf.style.width = '8px';
+                leaf.style.height = '8px';
+                leaf.style.animation = 'fall 18s linear infinite';
+                leaf.style.animationDelay = delay + 's';
+                
+                return leaf;
+            }
+
+            // 초기 낙엽 설정 (화면 전체에 분산 배치)
+            function initializeLeaves() {
+                // 초기에 8개의 낙엽을 다양한 시작 시점으로 분산
+                for (let i = 0; i < 8; i++) {
+                    const leaf = createLeaf(i * -2.5); // 음수로 시작해서 이미 떨어지고 있는 것처럼
+                    mainPetals.appendChild(leaf);
+                }
+            }
+
+            // 지속적으로 낙엽 추가
+            function continuousLeafGeneration() {
+                // 처음에 바로 몇 개 더 추가
+                setTimeout(() => {
+                    for (let i = 0; i < 3; i++) {
+                        const leaf = createLeaf(Math.random() * 2);
+                        mainPetals.appendChild(leaf);
+                    }
+                }, 500);
+
+                // 이후 지속적으로 추가
+                setInterval(() => {
+                    const leaf = createLeaf(0);
+                    mainPetals.appendChild(leaf);
+                    
+                    // 낙엽이 너무 많아지지 않도록 제한
+                    if (mainPetals.children.length > 20) {
+                        mainPetals.removeChild(mainPetals.firstChild);
+                    }
+                }, 3000);
+            }
+
+            // 페이지 로드 시 즉시 낙엽 시작 (초기화면부터)
+            initializeLeaves();
+            continuousLeafGeneration();
+
+            // 캘리그래피 애니메이션 시작 (낙엽은 이미 떨어지고 있음)
+            setTimeout(() => {
+                calligraphyOverlay.classList.add('show');
+                
+                // 글씨 타이핑 애니메이션
+                let currentText = '';
+                const firstLine = 'Welcome to';
+                const secondLine = 'Our Wedding';
+                let phase = 1;
+                let charIndex = 0;
+                
+                const typeText = () => {
+                    if (phase === 1) {
+                        if (charIndex < firstLine.length) {
+                            currentText = firstLine.substring(0, charIndex + 1);
+                            calligraphyText.textContent = currentText;
+                            charIndex++;
+                            setTimeout(typeText, 100);
+                        } else {
+                            setTimeout(() => {
+                                phase = 2;
+                                charIndex = 0;
+                                typeText();
+                            }, 300);
+                        }
+                    } else if (phase === 2) {
+                        if (charIndex < secondLine.length) {
+                            currentText = firstLine + '\n' + secondLine.substring(0, charIndex + 1);
+                            calligraphyText.textContent = currentText;
+                            charIndex++;
+                            setTimeout(typeText, 100);
+                        } else {
+                            // 텍스트 완성 후 오버레이만 페이드 아웃
+                            setTimeout(() => {
+                                calligraphyOverlay.classList.add('hide');
+                                
+                                setTimeout(() => {
+                                    calligraphyOverlay.style.display = 'none';
+                                    calligraphyOverlay.classList.remove('show', 'hide');
+                                }, 800);
+                            }, 1500);
+                        }
+                    }
+                };
+                
+                typeText();
+            }, 300);
         });
     </script>
     <!-- 네이버 지도 JavaScript API -->
-    <script type="text/javascript" src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpKeyId=NAVER_MAPS_CLIENT_ID"></script>
+    <script type="text/javascript" src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpClientId=NAVER_MAPS_CLIENT_ID"></script>
     <script>
         // 네이버 지도 초기화
         function initMap() {
