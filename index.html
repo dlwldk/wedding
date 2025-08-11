@@ -4,6 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>형조 & 지영의 결혼식</title>
+    
+    <!-- Open Graph 메타데이터 -->
+    <meta property="og:title" content="양형조 ♥ 유지영 결혼합니다">
+    <meta property="og:description" content="2025년 10월 19일 일요일 오후 1시 20분">
+    <meta property="og:image" content="img/tmp_main.jpg">
+    <meta property="og:url" content="">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="형조 & 지영의 결혼식">
+    
+    <!-- Twitter Card 메타데이터 -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="양형조 ♥ 유지영 결혼합니다">
+    <meta name="twitter:description" content="2025년 10월 19일 일요일 오후 1시 20분">
+    <meta name="twitter:image" content="img/tmp_main.jpg">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <!-- Cormorant Garamond 폰트 -->
@@ -246,6 +261,7 @@
                     <div class="calendar-body">
                         <div class="calendar-day empty"></div>
                         <div class="calendar-day empty"></div>
+                        <div class="calendar-day empty"></div>
                         <div class="calendar-day">1</div>
                         <div class="calendar-day">2</div>
                         <div class="calendar-day">3</div>
@@ -387,6 +403,36 @@
             initializeLeaves();
             continuousLeafGeneration();
 
+            // 스크롤 애니메이션 시스템
+            const coupleInfo = document.querySelector('.couple-info');
+            const weddingDates = document.querySelector('.wedding-dates');
+            const weddingDetails = document.querySelector('.wedding-details');
+            const greeting = document.querySelector('.greeting');
+            const closing = document.querySelector('.closing');
+            const calendarSection = document.querySelector('.calendar-section');
+
+            // Intersection Observer 설정
+            const observerOptions = {
+                threshold: 0.3,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate');
+                    }
+                });
+            }, observerOptions);
+
+            // 애니메이션 대상 요소들 관찰 시작
+            if (coupleInfo) observer.observe(coupleInfo);
+            if (weddingDates) observer.observe(weddingDates);
+            if (weddingDetails) observer.observe(weddingDetails);
+            if (greeting) observer.observe(greeting);
+            if (closing) observer.observe(closing);
+            if (calendarSection) observer.observe(calendarSection);
+
             // 캘리그래피 애니메이션 시작
             setTimeout(() => {
                 calligraphyOverlay.classList.add('show');
@@ -404,20 +450,20 @@
                             currentText = firstLine.substring(0, charIndex + 1);
                             calligraphyText.textContent = currentText;
                             charIndex++;
-                            setTimeout(typeText, 100);
+                            setTimeout(typeText, 80);
                         } else {
                             setTimeout(() => {
                                 phase = 2;
                                 charIndex = 0;
                                 typeText();
-                            }, 300);
+                            }, 200);
                         }
                     } else if (phase === 2) {
                         if (charIndex < secondLine.length) {
                             currentText = firstLine + '\n' + secondLine.substring(0, charIndex + 1);
                             calligraphyText.textContent = currentText;
                             charIndex++;
-                            setTimeout(typeText, 100);
+                            setTimeout(typeText, 80);
                         } else {
                             // 텍스트 완성 후 오버레이만 페이드 아웃
                             setTimeout(() => {
@@ -426,14 +472,18 @@
                                 setTimeout(() => {
                                     calligraphyOverlay.style.display = 'none';
                                     calligraphyOverlay.classList.remove('show', 'hide');
-                                }, 800);
-                            }, 1500);
+                                    // 오버레이가 완전히 사라진 후 메인 콘텐츠 표시
+                                    document.querySelector('.container').classList.add('show');
+                                    // 페이지 맨 위로 스크롤
+                                    window.scrollTo(0, 0);
+                                }, 500);
+                            }, 1000);
                         }
                     }
                 };
                 
                 typeText();
-            }, 300);
+            }, 100);
         });
     </script>
     <!-- 네이버 지도 JavaScript API -->
