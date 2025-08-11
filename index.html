@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>형조 & 지영의 결혼식</title>
     
-    <!-- Open Graph 메타데이터 -->
     <meta property="og:title" content="양형조 ♥ 유지영 결혼합니다">
     <meta property="og:description" content="2025년 10월 19일 일요일 오후 1시 20분">
     <meta property="og:image" content="img/tmp_main.jpg">
@@ -13,7 +12,6 @@
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="형조 & 지영의 결혼식">
     
-    <!-- Twitter Card 메타데이터 -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="양형조 ♥ 유지영 결혼합니다">
     <meta name="twitter:description" content="2025년 10월 19일 일요일 오후 1시 20분">
@@ -21,32 +19,29 @@
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <!-- Cormorant Garamond 폰트 -->
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <!-- 한글 폰트들 -->
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;500;600&family=Gowun+Dodum&display=swap" rel="stylesheet">
-    <!-- 아리따 부리 폰트 -->
     <link href="https://fonts.googleapis.com/css2?family=Arita+Buri:wght@300;400;700&display=swap" rel="stylesheet">
-    <!-- 한글 폰트 -->
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <!-- Pretendard 폰트 -->
     <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- 배경음악 -->
     <audio id="background-music" loop preload="auto">
         <source src="wedding-song.mp3" type="audio/mpeg">
     </audio>
     
-    <!-- 음악 컨트롤 버튼 -->
-    <button id="music-toggle" class="music-btn" title="음악 재생/정지">🎵</button>
+    <button id="music-toggle" class="music-btn" title="음악 재생/정지">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M9 18V5L21 3V16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="6" cy="18" r="3" stroke="currentColor" stroke-width="1.5"/>
+            <circle cx="18" cy="16" r="3" stroke="currentColor" stroke-width="1.5"/>
+        </svg>
+    </button>
 
-    <!-- 떨어지는 꽃잎들 -->
     <div class="flower-petals" id="main-petals">
     </div>
 
-    <!-- 캘리그래피 애니메이션 오버레이 -->
     <div id="calligraphy-overlay" class="calligraphy-overlay">
         <div class="calligraphy-container">
             <div class="calligraphy-text" id="calligraphy-text"></div>
@@ -54,12 +49,11 @@
     </div>
 
     <div class="container">
-        <!-- 첫 번째 페이지 - INVITATION -->
         <div class="invitation-cover">
             <div class="invitation-title">INVITATION</div>
             
             <div class="main-photo">
-                <img src="img/tmp_main.jpg" alt="형조 & 지영의 웨딩 사진" class="wedding-main-photo">
+                <img src="img/main.jpg" alt="형조 & 지영의 웨딩 사진" class="wedding-main-photo">
             </div>
             
             <div class="couple-info">
@@ -74,7 +68,7 @@
             
             <div class="wedding-details">
                 <div class="wedding-time">일요일 낮 1시 20분</div>
-                <div class="wedding-venue">더 베뉴지지 서울 2층 베뉴지홀</div>
+                <div class="wedding-venue">더 베뉴지 서울 2층 베뉴지홀</div>
             </div>
             
             <div class="invitation-message">
@@ -83,7 +77,6 @@
             </div>
         </div>
 
-        <!-- 인사말 -->
         <div class="greeting">
             <p>
                 곁에 있을 때 가장 나다운 모습이<br>
@@ -99,7 +92,6 @@
             </p>
         </div>
 
-        <!-- 가족 소개 -->
         <div class="family-info">
             <div class="family-line">
                 <span class="parents">故양봉식 · 김인숙</span>
@@ -113,32 +105,52 @@
             </div>
         </div>
 
-        <!-- 갤러리 -->
         <div class="gallery-section">
             <div class="gallery-title">Gallery</div>
             <div class="gallery-grid">
-                <div class="gallery-item">
-                    <img src="img/tmp_sub1.jpg" alt="웨딩 사진 1" class="gallery-photo">
+                <div class="gallery-item" onclick="openGallery(0)">
+                    <img src="img/sub1.jpg" alt="웨딩 사진 1" class="gallery-photo">
                 </div>
-                <div class="gallery-item">
-                    <img src="img/tmp_sub2.jpg" alt="웨딩 사진 2" class="gallery-photo">
+                <div class="gallery-item" onclick="openGallery(1)">
+                    <img src="img/sub2.jpg" alt="웨딩 사진 2" class="gallery-photo">
                 </div>
-                <div class="gallery-item">
-                    <img src="img/tmp_sub3.jpg" alt="웨딩 사진 3" class="gallery-photo">
+                <div class="gallery-item" onclick="openGallery(2)">
+                    <img src="img/sub3.jpg" alt="웨딩 사진 3" class="gallery-photo">
                 </div>
-                <div class="gallery-item">
-                    <img src="img/tmp_sub4.jpg" alt="웨딩 사진 4" class="gallery-photo">
+                <div class="gallery-item" onclick="openGallery(3)">
+                    <img src="img/sub4.jpg" alt="웨딩 사진 4" class="gallery-photo">
                 </div>
-                <div class="gallery-item">
-                    <img src="img/tmp_sub5.jpg" alt="웨딩 사진 5" class="gallery-photo">
+                <div class="gallery-item" onclick="openGallery(4)">
+                    <img src="img/sub5.jpg" alt="웨딩 사진 5" class="gallery-photo">
                 </div>
-                <div class="gallery-item">
-                    <img src="img/tmp_sub6.jpg" alt="웨딩 사진 6" class="gallery-photo">
+                <div class="gallery-item" onclick="openGallery(5)">
+                    <img src="img/sub6.jpg" alt="웨딩 사진 6" class="gallery-photo">
+                </div>
+                <div class="gallery-item" onclick="openGallery(6)">
+                    <img src="img/sub7.jpg" alt="웨딩 사진 7" class="gallery-photo">
+                </div>
+                <div class="gallery-item" onclick="openGallery(7)">
+                    <img src="img/sub8.jpg" alt="웨딩 사진 8" class="gallery-photo">
+                </div>
+                <div class="gallery-item" onclick="openGallery(8)">
+                    <img src="img/sub9.jpg" alt="웨딩 사진 9" class="gallery-photo">
                 </div>
             </div>
         </div>
 
-        <!-- 장소 정보 -->
+        <div id="gallery-modal" class="gallery-modal">
+            <div class="gallery-modal-content">
+                <span class="gallery-close" onclick="closeGallery()">&times;</span>
+                <div class="gallery-slide-container">
+                    </div>
+                <button class="gallery-nav gallery-prev" onclick="changeSlide(-1)">‹</button>
+                <button class="gallery-nav gallery-next" onclick="changeSlide(1)">›</button>
+                <div class="gallery-counter">
+                    <span id="current-slide">1</span> / <span id="total-slides">9</span>
+                </div>
+            </div>
+        </div>
+
         <div class="venue-section">
             <div class="venue-title">Wedding Information</div>
             <div class="venue-details">
@@ -148,7 +160,6 @@
             </div>
         </div>
 
-        <!-- 교통 정보 -->
         <div class="transport-section">
             <div class="transport-title">오시는 길</div>
             
@@ -191,34 +202,116 @@
             
         </div>
 
-        <!-- 마음 전하실 곳 -->
         <div class="account-section">
             <div class="account-title">마음 전하실 곳</div>
-            
+            <div class="account-intro">
+                축하해주시는 따뜻한 마음<br>
+                소중히 간직하겠습니다.
+            </div>
             <div class="account-container">
                 <div class="account-item">
-                    <div class="account-details">
-                        <div class="account-row">
-                            <div class="account-side">
-                                신랑측
-                                <a href="tel:01049341580" class="call-btn" title="신랑측 통화">📞</a>
+                    <div class="account-toggle-header">
+                        <div class="title-call-wrapper">
+                            <span class="account-side-title">신랑측에게</span>
+                            <a href="tel:01049341580" class="call-icon" onclick="event.stopPropagation();" title="신랑측에 전화걸기">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M22 16.92V19.92C22.0011 20.1985 21.9441 20.4742 21.8325 20.7293C21.7209 20.9844 21.5573 21.2136 21.3521 21.4019C21.1469 21.5902 20.9046 21.7335 20.6407 21.8227C20.3768 21.9119 20.0973 21.9452 19.82 21.92C16.7428 21.5856 13.787 20.5341 11.19 18.85C8.77382 17.3146 6.72533 15.2661 5.18999 12.85C3.49997 10.2412 2.44824 7.27099 2.11999 4.18C2.09494 3.90347 2.12787 3.62476 2.21649 3.36162C2.30512 3.09849 2.44756 2.85669 2.63476 2.65162C2.82196 2.44655 3.0498 2.28271 3.30351 2.17052C3.55722 2.05833 3.83149 2.00026 4.10999 2H7.10999C7.59522 1.99522 8.06569 2.16708 8.43373 2.48353C8.80177 2.79999 9.042 3.23945 9.10999 3.72C9.23662 4.68007 9.47144 5.62273 9.80999 6.53C9.94454 6.88792 9.97348 7.27675 9.89381 7.65307C9.81415 8.02939 9.62877 8.38336 9.35999 8.67L8.08999 9.94C9.51355 12.3635 11.6465 14.4965 14.07 15.92L15.34 14.65C15.6266 14.3812 15.9806 14.1958 16.3569 14.1162C16.7332 14.0365 17.1221 14.0655 17.48 14.2C18.3873 14.5386 19.3299 14.7734 20.29 14.9C20.7658 14.9728 21.2094 15.2176 21.5265 15.5906C21.8437 15.9636 22.0122 16.4376 22 16.92Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </a>
+                        </div>
+                        <span class="toggle-arrow">▼</span>
+                    </div>
+                    <div class="account-toggle-content">
+                        <div class="account-details">
+                            <div class="account-card">
+                                <div class="account-card-header">
+                                    <span class="account-role">신랑</span>
+                                    <span class="account-name">양형조</span>
+                                </div>
+                                <div class="account-card-content">
+                                    <div class="bank-name">케이뱅크</div>
+                                    <div class="account-number">
+                                        100-138-072465
+                                        <button class="copy-btn" onclick="copyToClipboard('100-138-072465')" title="계좌번호 복사">
+                                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M16 3H4V16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path d="M8 7H20V20H8V7Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="account-info">
-                                <div class="bank-name">케이뱅크</div>
-                                <div class="account-number">100-138-072465</div>
-                                <div class="account-holder">양형조</div>
+                            <div class="account-card">
+                                <div class="account-card-header">
+                                    <span class="account-role">신랑 어머니</span>
+                                    <span class="account-name">김인숙</span>
+                                </div>
+                                <div class="account-card-content">
+                                    <div class="bank-name">우리은행</div>
+                                    <div class="account-number">
+                                        1002-158-138284
+                                        <button class="copy-btn" onclick="copyToClipboard('1002-158-138284')" title="계좌번호 복사">
+                                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M16 3H4V16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path d="M8 7H20V20H8V7Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <div class="account-divider"></div>
-                        <div class="account-row">
-                            <div class="account-side">
-                                신부측
-                                <a href="tel:01092982749" class="call-btn" title="신부측 통화">📞</a>
+                    </div>
+                </div>
+        
+                <div class="account-item">
+                    <div class="account-toggle-header">
+                         <div class="title-call-wrapper">
+                            <span class="account-side-title">신부측에게</span>
+                            <a href="tel:01092982749" class="call-icon" onclick="event.stopPropagation();" title="신부측에 전화걸기">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M22 16.92V19.92C22.0011 20.1985 21.9441 20.4742 21.8325 20.7293C21.7209 20.9844 21.5573 21.2136 21.3521 21.4019C21.1469 21.5902 20.9046 21.7335 20.6407 21.8227C20.3768 21.9119 20.0973 21.9452 19.82 21.92C16.7428 21.5856 13.787 20.5341 11.19 18.85C8.77382 17.3146 6.72533 15.2661 5.18999 12.85C3.49997 10.2412 2.44824 7.27099 2.11999 4.18C2.09494 3.90347 2.12787 3.62476 2.21649 3.36162C2.30512 3.09849 2.44756 2.85669 2.63476 2.65162C2.82196 2.44655 3.0498 2.28271 3.30351 2.17052C3.55722 2.05833 3.83149 2.00026 4.10999 2H7.10999C7.59522 1.99522 8.06569 2.16708 8.43373 2.48353C8.80177 2.79999 9.042 3.23945 9.10999 3.72C9.23662 4.68007 9.47144 5.62273 9.80999 6.53C9.94454 6.88792 9.97348 7.27675 9.89381 7.65307C9.81415 8.02939 9.62877 8.38336 9.35999 8.67L8.08999 9.94C9.51355 12.3635 11.6465 14.4965 14.07 15.92L15.34 14.65C15.6266 14.3812 15.9806 14.1958 16.3569 14.1162C16.7332 14.0365 17.1221 14.0655 17.48 14.2C18.3873 14.5386 19.3299 14.7734 20.29 14.9C20.7658 14.9728 21.2094 15.2176 21.5265 15.5906C21.8437 15.9636 22.0122 16.4376 22 16.92Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </a>
+                        </div>
+                        <span class="toggle-arrow">▼</span>
+                    </div>
+                    <div class="account-toggle-content">
+                        <div class="account-details">
+                            <div class="account-card">
+                                <div class="account-card-header">
+                                    <span class="account-role">신부</span>
+                                    <span class="account-name">유지영</span>
+                                </div>
+                                <div class="account-card-content">
+                                    <div class="bank-name">케이뱅크</div>
+                                    <div class="account-number">
+                                        100-161-612717
+                                        <button class="copy-btn" onclick="copyToClipboard('100-161-612717')" title="계좌번호 복사">
+                                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M16 3H4V16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path d="M8 7H20V20H8V7Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="account-info">
-                                <div class="bank-name">케이뱅크</div>
-                                <div class="account-number">100-161-612717</div>
-                                <div class="account-holder">유지영</div>
+                            <div class="account-card">
+                                <div class="account-card-header">
+                                    <span class="account-role">신부 아버지</span>
+                                    <span class="account-name">유준호</span>
+                                </div>
+                                <div class="account-card-content">
+                                    <div class="bank-name">국민은행</div>
+                                    <div class="account-number">
+                                        707225-91-105542
+                                        <button class="copy-btn" onclick="copyToClipboard('707225-91-105542')" title="계좌번호 복사">
+                                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M16 3H4V16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                                <path d="M8 7H20V20H8V7Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -226,14 +319,11 @@
             </div>
         </div>
 
-        <!-- 지도 -->
         <div class="map-section">
             <div class="map-container">
-                <!-- 네이버 지도 JavaScript API -->
                 <div id="map" style="width:100%;height:300px;"></div>
             </div>
             
-            <!-- 지도 링크 버튼들 -->
             <div class="map-links">
                 <a href="https://naver.me/x5GojlWc" target="_blank" class="map-link-btn naver-map">
                     <span class="map-icon">🗺️</span>
@@ -245,7 +335,6 @@
                 </a>
             </div>
             
-            <!-- 달력 -->
             <div class="calendar-section">
                 <div class="calendar-title">10월</div>
                 <div class="calendar">
@@ -298,7 +387,6 @@
             </div>
         </div>
 
-        <!-- 마무리 -->
         <div class="closing">
             <div class="closing-text">
                 소중한 분들과 함께하는<br>
@@ -309,7 +397,6 @@
         </div>
     </div>
 
-    <!-- 음악 컨트롤 JavaScript -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const audio = document.getElementById('background-music');
@@ -320,7 +407,13 @@
             audio.volume = 0.3;
 
             // 페이지 로드 시 음소거 상태로 시작
-            toggleBtn.textContent = '🎵';
+            toggleBtn.innerHTML = `
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M9 18V5L21 3V16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <circle cx="6" cy="18" r="3" fill="currentColor"/>
+                    <circle cx="18" cy="16" r="3" fill="currentColor"/>
+                </svg>
+            `;
             toggleBtn.title = '음악 재생';
             isPlaying = false;
 
@@ -328,12 +421,23 @@
             toggleBtn.addEventListener('click', function() {
                 if (isPlaying) {
                     audio.pause();
-                    toggleBtn.textContent = '🎵';
+                    toggleBtn.innerHTML = `
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9 18V5L21 3V16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <circle cx="6" cy="18" r="3" fill="currentColor"/>
+                            <circle cx="18" cy="16" r="3" fill="currentColor"/>
+                        </svg>
+                    `;
                     toggleBtn.title = '음악 재생';
                     isPlaying = false;
                 } else {
                     audio.play().then(() => {
-                        toggleBtn.textContent = '🔇';
+                        toggleBtn.innerHTML = `
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="6" y="4" width="4" height="16" fill="currentColor"/>
+                                <rect x="14" y="4" width="4" height="16" fill="currentColor"/>
+                            </svg>
+                        `;
                         toggleBtn.title = '음악 정지';
                         isPlaying = true;
                     }).catch((error) => {
@@ -344,7 +448,13 @@
 
             // 음악이 끝나면 버튼 상태 리셋
             audio.addEventListener('ended', function() {
-                toggleBtn.textContent = '🎵';
+                toggleBtn.innerHTML = `
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M9 18V5L21 3V16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <circle cx="6" cy="18" r="3" fill="currentColor"/>
+                        <circle cx="18" cy="16" r="3" fill="currentColor"/>
+                    </svg>
+                `;
                 toggleBtn.title = '음악 재생';
                 isPlaying = false;
             });
@@ -410,6 +520,10 @@
             const greeting = document.querySelector('.greeting');
             const closing = document.querySelector('.closing');
             const calendarSection = document.querySelector('.calendar-section');
+            const gallerySection = document.querySelector('.gallery-section');
+            const venueSection = document.querySelector('.venue-section');
+            const transportSection = document.querySelector('.transport-section');
+            const accountSection = document.querySelector('.account-section');
 
             // Intersection Observer 설정
             const observerOptions = {
@@ -432,6 +546,10 @@
             if (greeting) observer.observe(greeting);
             if (closing) observer.observe(closing);
             if (calendarSection) observer.observe(calendarSection);
+            if (gallerySection) observer.observe(gallerySection);
+            if (venueSection) observer.observe(venueSection);
+            if (transportSection) observer.observe(transportSection);
+            if (accountSection) observer.observe(accountSection);
 
             // 캘리그래피 애니메이션 시작
             setTimeout(() => {
@@ -486,13 +604,261 @@
             }, 100);
         });
     </script>
-    <!-- 네이버 지도 JavaScript API -->
+    
+    <script>
+        let currentSlideIndex = 0;
+        const galleryImages = [
+            'img/sub1.jpg', 'img/sub2.jpg', 'img/sub3.jpg',
+            'img/sub4.jpg', 'img/sub5.jpg', 'img/sub6.jpg',
+            'img/sub7.jpg', 'img/sub8.jpg', 'img/sub9.jpg'
+        ];
+
+        const modal = document.getElementById('gallery-modal');
+        const slideContainer = document.querySelector('.gallery-slide-container');
+        let isSliding = false;
+        let touchStartX = 0;
+
+        function openGallery(index) {
+            currentSlideIndex = index;
+            updateGallery(true); // isInitial = true, 애니메이션 없이 첫 슬라이드 설정
+
+            modal.style.display = 'block';
+            setTimeout(() => modal.classList.add('show'), 10);
+            
+            document.body.style.overflow = 'hidden';
+
+            // 스와이프를 위한 이벤트 리스너 추가
+            modal.addEventListener('touchstart', handleTouchStart, { passive: true });
+            modal.addEventListener('touchend', handleTouchEnd);
+        }
+
+        function closeGallery() {
+            modal.classList.remove('show');
+            setTimeout(() => {
+                modal.style.display = 'none';
+                slideContainer.innerHTML = ''; // 모달을 닫을 때 슬라이드 내용 제거
+            }, 500); // CSS 애니메이션 시간과 맞춤
+            document.body.style.overflow = 'auto';
+
+            // 이벤트 리스너 제거
+            modal.removeEventListener('touchstart', handleTouchStart);
+            modal.removeEventListener('touchend', handleTouchEnd);
+        }
+
+        function changeSlide(n) {
+            if (isSliding) return; // 슬라이딩 중에는 중복 실행 방지
+            
+            const newIndex = (currentSlideIndex + n + galleryImages.length) % galleryImages.length;
+            currentSlideIndex = newIndex;
+            updateGallery(false, n > 0 ? 'next' : 'prev');
+        }
+
+        function updateGallery(isInitial = false, direction = '') {
+            isSliding = true;
+
+            const currentSlideCounter = document.getElementById('current-slide');
+            if (currentSlideCounter) {
+                currentSlideCounter.textContent = currentSlideIndex + 1;
+            }
+
+            const newSlide = document.createElement('div');
+            newSlide.className = 'gallery-slide';
+            const newImg = document.createElement('img');
+            newImg.src = galleryImages[currentSlideIndex];
+            newImg.alt = `웨딩 사진 ${currentSlideIndex + 1}`;
+            newSlide.appendChild(newImg);
+
+            if (isInitial) {
+                slideContainer.innerHTML = '';
+                slideContainer.appendChild(newSlide);
+                isSliding = false;
+                return;
+            }
+
+            const oldSlide = slideContainer.querySelector('.gallery-slide');
+
+            if (direction === 'next') {
+                newSlide.style.transform = 'translateX(100%)';
+            } else {
+                newSlide.style.transform = 'translateX(-100%)';
+            }
+            
+            slideContainer.appendChild(newSlide);
+
+            // requestAnimationFrame을 사용하여 부드러운 애니메이션 보장
+            requestAnimationFrame(() => {
+                requestAnimationFrame(() => {
+                    if (direction === 'next') {
+                        newSlide.style.transform = 'translateX(0)';
+                        if (oldSlide) oldSlide.style.transform = 'translateX(-100%)';
+                    } else {
+                        newSlide.style.transform = 'translateX(0)';
+                        if (oldSlide) oldSlide.style.transform = 'translateX(100%)';
+                    }
+                });
+            });
+
+            // 애니메이션이 끝난 후 이전 슬라이드 제거 및 잠금 해제
+            setTimeout(() => {
+                if (oldSlide) {
+                    oldSlide.remove();
+                }
+                isSliding = false;
+            }, 500); // CSS transition 시간과 동일하게 설정
+        }
+
+        // --- 스와이프 기능 ---
+        function handleTouchStart(e) {
+            if (e.target.closest('.gallery-slide-container')) {
+                touchStartX = e.touches[0].clientX;
+            } else {
+                touchStartX = 0;
+            }
+        }
+
+        function handleTouchEnd(e) {
+            if (touchStartX === 0) return;
+
+            const touchEndX = e.changedTouches[0].clientX;
+            const diffX = touchStartX - touchEndX;
+
+            if (Math.abs(diffX) > 50) { // 50px 이상 스와이프 했을 때만
+                if (diffX > 0) {
+                    changeSlide(1); // 왼쪽으로 스와이프 (다음 사진)
+                } else {
+                    changeSlide(-1); // 오른쪽으로 스와이프 (이전 사진)
+                }
+            }
+            touchStartX = 0;
+        }
+
+        // ESC 키 또는 모달 바깥 클릭으로 닫기
+        document.addEventListener('keydown', function(event) {
+            if (modal.style.display === 'block' && event.key === 'Escape') {
+                closeGallery();
+            }
+        });
+
+        modal.addEventListener('click', function(event) {
+            if (event.target === this) {
+                closeGallery();
+            }
+        });
+    </script>
+    
+    <script>
+        function copyToClipboard(text) {
+            if (navigator.clipboard && window.isSecureContext) {
+                navigator.clipboard.writeText(text).then(() => {
+                    showCopySuccess();
+                }).catch(() => {
+                    fallbackCopyTextToClipboard(text);
+                });
+            } else {
+                fallbackCopyTextToClipboard(text);
+            }
+        }
+
+        function fallbackCopyTextToClipboard(text) {
+            const textArea = document.createElement("textarea");
+            textArea.value = text;
+            textArea.style.top = "0";
+            textArea.style.left = "0";
+            textArea.style.position = "fixed";
+            document.body.appendChild(textArea);
+            textArea.focus();
+            textArea.select();
+            
+            try {
+                document.execCommand('copy');
+                showCopySuccess();
+            } catch (err) {
+                console.error('복사 실패:', err);
+            }
+            
+            document.body.removeChild(textArea);
+        }
+
+        function showCopySuccess() {
+            const message = document.createElement('div');
+            message.textContent = '계좌번호가 복사되었습니다!';
+            message.style.cssText = `
+                position: fixed;
+                bottom: 30px;
+                left: 50%;
+                transform: translateX(-50%);
+                background-color: #ffffff;
+                color: #6b5b47;
+                padding: 10px 16px;
+                border-radius: 25px;
+                font-size: 12px;
+                font-weight: 400;
+                z-index: 10000;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+                animation: slideUpFade 2s ease-in-out;
+                border: 1px solid #e8dfd0;
+            `;
+            
+            const style = document.createElement('style');
+            style.textContent = `
+                @keyframes slideUpFade {
+                    0% { 
+                        opacity: 0; 
+                        transform: translateX(-50%) translateY(20px);
+                    }
+                    20% { 
+                        opacity: 1; 
+                        transform: translateX(-50%) translateY(0);
+                    }
+                    80% { 
+                        opacity: 1; 
+                        transform: translateX(-50%) translateY(0);
+                    }
+                    100% { 
+                        opacity: 0; 
+                        transform: translateX(-50%) translateY(-10px);
+                    }
+                }
+            `;
+            document.head.appendChild(style);
+            
+            document.body.appendChild(message);
+            
+            setTimeout(() => {
+                if (document.body.contains(message)) {
+                    document.body.removeChild(message);
+                }
+            }, 2000);
+        }
+
+        // 계좌번호 토글 기능
+        document.addEventListener('DOMContentLoaded', function() {
+            const accountItems = document.querySelectorAll('.account-item');
+            
+            accountItems.forEach(item => {
+                const header = item.querySelector('.account-toggle-header');
+                const content = item.querySelector('.account-toggle-content');
+                
+                header.addEventListener('click', function() {
+                    const isActive = item.classList.contains('active');
+                    
+                    // 현재 아이템 토글
+                    if (isActive) {
+                        item.classList.remove('active');
+                        content.style.maxHeight = '0';
+                    } else {
+                        item.classList.add('active');
+                        content.style.maxHeight = content.scrollHeight + 'px';
+                    }
+                });
+            });
+        });
+    </script>
+    
     <script type="text/javascript" src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpKeyId=NAVER_MAPS_CLIENT_ID"></script>
     <script>
-        // 네이버 지도 초기화
         function initMap() {
             try {
-                // 결혼식장 좌표
                 var mapOptions = {
                     center: new naver.maps.LatLng(37.5589, 126.8354),
                     zoom: 15,
@@ -508,14 +874,12 @@
 
                 var map = new naver.maps.Map('map', mapOptions);
 
-                // 마커 추가
                 var marker = new naver.maps.Marker({
                     position: new naver.maps.LatLng(37.5589, 126.8354),
                     map: map,
                     title: '더 베뉴지 서울'
                 });
 
-                // 정보창 추가
                 var infoWindow = new naver.maps.InfoWindow({
                     content: `
                         <div style="padding: 10px; min-width: 200px;">
@@ -525,7 +889,6 @@
                     `
                 });
 
-                // 마커 클릭 시 정보창 표시
                 naver.maps.Event.addListener(marker, 'click', function() {
                     if (infoWindow.getMap()) {
                         infoWindow.close();
@@ -534,11 +897,9 @@
                     }
                 });
 
-                // 페이지 로드 시 정보창 자동으로 열기
                 infoWindow.open(map, marker);
             } catch (error) {
                 console.error('지도 초기화 오류:', error);
-                // 오류 발생 시 대체 텍스트 표시
                 document.getElementById('map').innerHTML = `
                     <div style="display: flex; align-items: center; justify-content: center; height: 100%; background-color: #f8f8f8; color: #666; font-size: 14px;">
                         <div style="text-align: center;">
@@ -551,9 +912,7 @@
             }
         }
 
-        // 페이지 로드 후 지도 초기화
         document.addEventListener('DOMContentLoaded', function() {
-            // 지도 섹션이 화면에 보일 때 지도 초기화
             const mapSection = document.querySelector('.map-section');
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
