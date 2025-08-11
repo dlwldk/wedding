@@ -477,11 +477,11 @@ body {
 }
 
 .gallery-slide img {
-    width: auto;
+    width: 100%;
     height: auto;
     max-width: 100%;
     max-height: 100%;
-    object-fit: contain;
+    object-fit: cover;
     pointer-events: none;
     user-select: none;
     -webkit-user-select: none;
