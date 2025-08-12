@@ -636,8 +636,8 @@
             modal.classList.remove('show');
             setTimeout(() => {
                 modal.style.display = 'none';
-                slideContainer.innerHTML = ''; // 모달을 닫을 때 슬라이드 내용 제거
-            }, 500); // CSS 애니메이션 시간과 맞춤
+                slideContainer.innerHTML = '';
+            }, 500);
             document.body.style.overflow = 'auto';
 
             // 이벤트 리스너 제거
@@ -685,7 +685,7 @@
             
             slideContainer.appendChild(newSlide);
 
-            // requestAnimationFrame을 사용하여 부드러운 애니메이션 보장
+            // 부드러운 애니메이션
             requestAnimationFrame(() => {
                 requestAnimationFrame(() => {
                     if (direction === 'next') {
@@ -722,7 +722,7 @@
             const touchEndX = e.changedTouches[0].clientX;
             const diffX = touchStartX - touchEndX;
 
-            if (Math.abs(diffX) > 50) { // 50px 이상 스와이프 했을 때만
+            if (Math.abs(diffX) > 50) {
                 if (diffX > 0) {
                     changeSlide(1); // 왼쪽으로 스와이프 (다음 사진)
                 } else {
@@ -842,7 +842,6 @@
                 header.addEventListener('click', function() {
                     const isActive = item.classList.contains('active');
                     
-                    // 현재 아이템 토글
                     if (isActive) {
                         item.classList.remove('active');
                         content.style.maxHeight = '0';
