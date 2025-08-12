@@ -409,7 +409,7 @@ body {
     transform: scale(1.05);
 }
 
-/* 갤러리 모달 (스타일 수정됨) */
+/* 갤러리 모달 */
 .gallery-modal {
     display: none;
     position: fixed;
@@ -462,6 +462,7 @@ body {
     align-items: center;
     justify-content: center;
     overflow: hidden;
+    padding: 0;
 }
 
 .gallery-slide {
@@ -487,27 +488,30 @@ body {
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
+    -webkit-touch-callout: none;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
 }
 
-/* 이전/다음 버튼 (디자인 수정됨) */
+/* 이전/다음 버튼 */
 .gallery-nav {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background: transparent; /* 원형 배경 제거 */
+    background: transparent;
     color: #fefcf8;
     border: none;
     cursor: pointer;
-    font-size: 28px; /* 화살표 아이콘 크기 더 감소 */
-    font-weight: 10; /* 더 얇은 화살표 모양 */
+    font-size: 28px;
+    font-weight: 10;
     transition: all 0.2s ease;
     z-index: 10002;
-    padding: 0 15px; /* 터치 영역 확보를 위한 좌우 여백 */
-    text-shadow: 0 1px 4px rgba(0,0,0,0.4); /* 가독성을 위한 그림자 */
+    padding: 0 15px;
+    text-shadow: 0 1px 4px rgba(0,0,0,0.4); 
 }
 
 .gallery-nav:hover {
-    transform: translateY(-50%) scale(1.15); /* 호버 시 살짝 커지는 효과 */
+    transform: translateY(-50%) scale(1.15);
 }
 
 .gallery-prev {
@@ -518,18 +522,18 @@ body {
     right: 0px;
 }
 
-/* 페이지 카운터 (디자인 수정됨) */
+/* 페이지 카운터 */
 .gallery-counter {
     position: absolute;
     bottom: 25px;
     left: 50%;
     transform: translateX(-50%);
     color: #fefcf8;
-    font-size: 12px; /* 숫자 크기 감소 */
+    font-size: 12px;
     font-weight: 300;
-    background: transparent; /* 배경 제거 */
-    padding: 0; /* 패딩 제거 */
-    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5); /* 가독성을 위한 그림자 */
+    background: transparent;
+    padding: 0;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
 }
 /* ------------------------------------- */
 
@@ -1060,7 +1064,7 @@ body {
     width: 100%;
     height: 100%;
     pointer-events: none;
-    z-index: 10001; /* 오버레이보다 위에 표시되도록 수정 */
+    z-index: 9998; /* 모달보다 아래에 표시되도록 수정 */
     overflow: hidden;
     display: block;
 }
